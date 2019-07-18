@@ -1,0 +1,108 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+#if 0
+
+void bubble_sort(int *a, int len)
+{
+	int i = 0, j = 0;
+	for (i = 0; i < len - 1; i++)
+	{
+		int flag = 0;
+		for (j = 0; j < len - i - 1; j++)
+		{
+			int temp = 0;
+			if (a[j] > a[j + 1])
+			{
+				temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+				flag = 1;
+			}
+		}
+		if (flag == 0)
+		{
+			break;
+		}
+	}
+	return;
+}
+int main()
+{
+	int a[9] = { 1,2,3,2,2,2,5,4,2 };
+	bubble_sort(a, sizeof(a) / sizeof(a[0]));
+	int i = 0;
+	int len = sizeof(a) / sizeof(a[0]);
+	int flag = len / 2;
+	int count = 1;
+	for (i = 0; i < len - 1; i++)
+	{
+		if (a[i] == a[i + 1])
+		{
+			count++;
+		}
+		else if (count != 1)
+		{
+			if (count > flag)
+			{
+				printf("%d超过数组长度一半\n", a[i]);
+				break;
+			}
+		}
+		else
+		{
+			count = 1;
+			continue;
+		}
+
+	}
+	system("pause");
+	return 0;
+}
+
+
+#elif 1
+void Func(char str_arg[6])		//就是指针的概念
+{
+	int m = sizeof(str_arg);		
+	int n = strlen(str_arg);
+	printf("\n%c\n", *str_arg);
+	printf("\n%c\n", *(str_arg + 1));
+	printf("\n%c\n", *(str_arg + 2));
+	printf("\n%c\n", *(str_arg + 3));
+	printf("\n%c\n", *(str_arg + 4));
+	printf("\n%c\n", *(str_arg + 5));
+	printf("m = %d\n", m);
+	printf("n = %d\n", n);
+	return;
+}
+int main()
+{
+	char str[] = "hello";
+	Func(str);		//str退化为指针
+	system("pause");
+//	getch();
+	return 0;
+}
+#elif 1
+union x
+{
+	int x;
+	char y[4];
+}a;
+
+int main()
+{
+	a.x = 0x11223344;
+	printf("a.y[0] = %x\n", a.y[0]);
+	printf("a.y[1] = %x\n", a.y[1]);
+	printf("a.y[2] = %x\n", a.y[2]);
+	printf("a.y[3] = %x\n", a.y[3]);
+
+	system("pause");
+	return 0;
+}
+
+#endif // 0
+
