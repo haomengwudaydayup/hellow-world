@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#if 0
+int main()
+{
+	int a[5] = { 1,2,3,4,5 };
+	int *p1 = (int *)(&a + 1);
+	int *p2 = (int *)((int)a + 1);
+	int *p3 = (int *)(a + 1);
+	printf("%d %x %d\n", p1[-1], p2[0], p3[1]);
+	system("pause");
+	return 0;
+}
+
+#elif 0
+
+int main()
+{
+	int a[5] = { 1,2,3,4,5 };
+	int *p2 = (int *)((int)a + 1);
+	printf("%x\n", p2[0]);
+	system("pause");
+	return 0;
+}
+#elif 0
+
+#define Min(x,y) (x) >= (y) ? (y) : (x)
+
+int main()
+{
+	int a = 10, b = 20;
+	int c = Min(b, a);
+	printf("c = %d\n", c);
+	system("pause");
+	return 0;
+}
+#elif 0
+int main()
+{
+	char acX[] = "abc";
+	char acY[] = { 'a', 'b', 'c' };
+	printf("num = %d\n", sizeof(acX));
+	printf("num1 = %d\n", sizeof(acY));
+	acX[1] = 'z';
+	printf("%s\n", acX);
+	system("pause");
+	return 0;
+}
+#elif 1
+
+int main()
+{
+	int x[] = { 1,2,3,4,5,6 };
+	int *p = x;
+	p += 2;
+	printf("%d\n", *++p);
+	system("pause");
+	return 0;
+}
+#endif // 0
+
